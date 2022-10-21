@@ -1,0 +1,408 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    &.noscroll {
+        position: static !important;
+        width: 100%;
+        height: 100%;
+        overflow: hidden !important;
+        overflow-y: hidden !important;
+        margin: 0;
+        padding: 0;
+    }
+}
+
+// 最外圍預設為100%
+.wrapper {
+    width: 100%;
+    margin: 0px auto;
+
+    @include screen('mobile') {
+        background: #FFF;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+
+    &.login {
+        background: #f2f2f2;
+
+        .header {
+            &:before {
+                box-shadow: none;
+            }
+        }
+
+        .main {
+
+            >.container {
+                background: url(../images/miweb/hero.png) left 20px no-repeat;
+            }
+
+            >section {
+                .container {
+                    background: transparent;
+                    @include gutter(0);
+                    padding-top: 0;
+                    padding-bottom: 0;
+                }
+            }
+        }
+
+        .flex-form {
+            .radio_grp.form_inline label {
+                margin: .25em 0;
+            }
+
+            .form_grp {
+                border-bottom: none;
+
+                .form_title {
+                    padding: .5em 0 !important;
+                    font-size: 1.5em;
+                }
+            }
+        }
+
+        .flex-equal-2 {
+            // background: url(../images/miweb/bg-login.png) 50% bottom no-repeat;
+
+            .Flex-set {
+                flex-flow: row-reverse wrap-reverse !important;
+                align-items: stretch;
+
+                .col {
+                    &:first-child {
+                        background: $lightColor;
+                        padding: 2em 1.9em;
+                    }
+
+                    &:last-child {
+                        margin-top: 16em;
+                    }
+                }
+            }
+        }
+
+        .userID {
+            .flex-form {
+                display: flex;
+                flex-flow: row wrap;
+                align-items: flex-start;
+
+                .form_grp {
+                    flex: 1 1 auto;
+                    max-width: 50%;
+
+                    &:last-child {
+                        min-width: 100%;
+                    }
+
+                    .form_title {
+                        font-size: 1em;
+                        padding: 0 !important;
+                    }
+                }
+            }
+
+            .captcha+.btn {
+                padding: .5em;
+                background: transparent;
+                border: 1px solid transparent;
+                font-size: 90%;
+                font-weight: bold;
+
+                &:hover {
+                    background: $secondaryColor;
+                    color: #fff;
+                }
+            }
+        }
+
+        footer {
+            background: #fff;
+            padding: 2em 0;
+
+            .container {
+                background: none;
+                padding-bottom: 0;
+
+                p {
+                    color: #767676;
+                }
+            }
+        }
+
+        @include screen('mobile') {
+            .flex-equal-2 {
+                .Flex-set {
+                    flex-flow: row wrap !important;
+
+                    .col {
+                        &:first-child {
+                            // background: $lightColor;
+                            // padding: 2em 1.9em;
+                            margin-top: 220px;
+                        }
+
+                        &:last-child {
+                            // margin-top: 16em;
+                            margin-top: 2em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    a.forgetPW {
+        display: block;
+        width: 100%;
+        text-align: right;
+        color: #222;
+        padding: 0 6px;
+        font-size: 90%;
+        font-weight: bold;
+        cursor: pointer;
+
+        span {
+            display: inline-block;
+            background: #a8433c;
+            color: #fff;
+            width: 22px;
+            height: 22px;
+            font-size: 1em;
+            // font-weight: bold;
+            text-align: center;
+            font-size: .9em;
+            margin-right: 4px;
+            border-radius: 50%;
+        }
+    }
+}
+
+// 整體共用container樣式，請注意首頁切版頁面的整齊
+.container {
+    padding: 0;
+    margin: 0 auto;
+    max-width: $container-max; //請看_variable.scss
+}
+
+.main {
+    position: relative;
+    margin: 0 auto;
+
+    // 可先設定一個中央區塊最大寬，限制accesskey對齊
+    h2.title {
+        line-height: 1.25em;
+        position: relative;
+        z-index: 1;
+        padding: .75em 1.5em;
+
+        &:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: $lightColor;
+            left: 0;
+            top: 2px;
+            z-index: -1;
+        }
+    }
+
+    .sub-title {
+        margin: .5em 0;
+    }
+
+    >section {
+        .container {
+            background: #f8f8f8;
+            @include gutter(6em);
+            padding-bottom: 1em;
+            padding-top: 1em;
+        }
+    }
+
+    .newslist {
+        ul {
+            @include li-reset;
+
+            li {
+                a {
+                    display: flex;
+                    padding: .75em 0;
+                    color: #1a1a1a;
+                    border-bottom: solid 1px #d1d1d1;
+
+                    time {
+                        margin-right: 6px;
+                    }
+
+                    span {
+                        display: inline-block;
+                        width: calc(100% - 100px);
+                    }
+                }
+
+                &:last-child {
+                    a {
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+    }
+
+    .link-list {
+        .links {
+            ul {
+                @include li-reset;
+                @extend %flex_set;
+
+                li {
+                    @include flex-xs-equal(1, 0px);
+                    @include flex-sm-equal(2, 10px);
+                    @include flex-md-equal(4, 10px);
+                    @include flex-lg-equal(4, 10px);
+
+                    a {
+                        display: flex;
+                        background: linear-gradient(320deg, rgba(50, 32, 23, 1) 0%, rgba(99, 64, 45, 1) 100%);
+                        color: #fff;
+                        border-radius: 4px;
+                        font-size: 1.125em;
+                        padding: 1.5em 1.75em;
+                        margin: 1em 0;
+                    }
+
+                    position: relative;
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        width: 80px;
+                        height: 40px;
+                        // background: pink;
+                        right: 3%;
+                        bottom: -5%;
+                    }
+
+                    &:nth-child(1) {
+                        &:after {
+                            background: url(../images/miweb/icon-meat-1.png) 50% 50% no-repeat;
+                            background-size: contain;
+                        }
+                    }
+
+                    &:nth-child(2) {
+                        &:after {
+                            background: url(../images/miweb/icon-meat-2.png) 50% 50% no-repeat;
+                            background-size: contain;
+                        }
+                    }
+
+                    &:nth-child(3) {
+                        &:after {
+                            background: url(../images/miweb/icon-meat-3.png) 50% 50% no-repeat;
+                            background-size: contain;
+                        }
+                    }
+
+                    &:nth-child(4) {
+                        &:after {
+                            background: url(../images/miweb/icon-meat-4.png) 50% 50% no-repeat;
+                            background-size: contain;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 影音專區
+    .embed-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+    }
+
+    .embed-container iframe,
+    .embed-container object,
+    .embed-container embed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    @include screen('mobile') {
+        margin-top: 60px;
+    }
+}
+
+////////////////////////////////////////////////////////////
+// 為了與首頁區隔，請在內頁加上innerpage ClassName
+.innerpage {
+    >.container {
+        @include gutter(); //gutter 代表左右要留白
+        display: flex;
+    }
+
+    .center_block {
+        flex: none;
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    .left_block {
+        flex: none;
+        flex-basis: 260px;
+        max-width: 260px;
+        margin-right: 40px;
+
+        &.hidden {
+            +.center_block {
+                flex: none;
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+
+        +.center_block {
+            flex: auto;
+            flex-basis: calc(100% - 300px);
+            max-width: calc(100% - 300px);
+        }
+
+        @include screen('tablet') {
+            display: none;
+
+            +.center_block {
+                flex: none;
+                flex-basis: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+
+    &.small_size {
+        font-size: .938em;
+    }
+
+    &.large_size {
+        font-size: 1.125em;
+    }
+}
+
+.hidden {
+    display: none;
+}

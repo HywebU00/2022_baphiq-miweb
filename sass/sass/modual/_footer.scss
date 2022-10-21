@@ -1,0 +1,47 @@
+footer {
+    box-sizing: border-box;
+    @include clearfix;
+    text-align: left;
+    font-size: 0.813em;
+
+    .container {
+        background: url(../images/miweb/bg-footer.png) right top no-repeat;
+        background-size: contain;
+
+        >div {
+            padding-bottom: 1em;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $primaryColor;
+
+        &:hover,
+        &:focus {
+            color: darken($primaryColor, 10);
+        }
+    }
+
+    p {
+        line-height: 1.8;
+        margin: 0;
+        color: #222;
+    }
+
+    .footer_info {
+        p.shelter {
+            padding-left: 3em;
+            margin: 3em 0;
+            border-left: 4px solid $primaryColor;
+
+            +div {
+                background: rgba(195, 202, 210, .5);
+                backdrop-filter: blur(6px);
+                -webkit-backdrop-filter: blur(6px);
+                padding: 1.5em 3em;
+                border-radius: 3px;
+            }
+        }
+    }
+}

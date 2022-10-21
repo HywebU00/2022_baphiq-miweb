@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="zh-Hant" class="no-js">
+
+<head>
+    <meta name="robots" content="noindex"><!-- 使用 noindex 禁止 Google 搜尋建立索引，套版時請工程師刪掉這行 -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>網站名稱</title>
+    <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries [if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- slick css-->
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="vendor/slick/slick-theme.css" />
+    <!-- 燈箱facybox -->
+    <link rel="stylesheet" type="text/css" href="vendor/fancybox/jquery.fancybox.min.css">
+    <!-- hyUI css -->
+    <link rel="stylesheet" href="css/hyui.css">
+    <!-- favicon -->
+    <link href="images/favicon.png" rel="icon" type="image/x-icon">
+</head>
+
+<body>
+    <!-- wrapper Start -->
+    <div class="wrapper login">
+        <!-- header Start -->
+        <header class="header">
+            <div class="container">
+                <h1>
+                    <a href="index.htm"><img src="images/logo.png" alt="網站標題" /></a>
+                </h1>
+            </div>
+        </header>
+        <!-- header End -->
+        <!-- main Start -->
+        <div id="center" class="main">
+            <!-- 任何一個section下一層都要包下一層都要包div container作對齊 -->
+            <!--  兩欄樣式 -->
+            <div class="container">
+                <section class="flex-equal-2">
+                    <div class="container Flex-set">
+                        <!-- 使用者身份 -->
+                        <div class="col">
+                            <div class="flex-form form-column">
+                                <div class="form_grp">
+                                    <label for="fake-legend" class="form_title" aria-required="true">使用者身份</label>
+                                    <div class="form_content" id="fake-legend">
+                                        <div class="radio_grp form_inline">
+                                            <label><input type="radio" name="sampleRadio1" value=""
+                                                    checked="">防檢局、中央畜產會、農科院與動物防疫機關查核人員</label>
+                                            <label><input type="radio" name="sampleRadio1"
+                                                    value="">其他人員(如:屠宰場、化製場、縣市政府與學校等)</label>
+                                            <label><input type="radio" name="sampleRadio1"
+                                                    value="">跨屠宰場支援屠檢業務之屠檢人員</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form_grp">
+                                    <label for="fake-legend" class="form_title" aria-required="true">選擇系統</label>
+                                    <div class="form_content">
+                                        <select name="" id="fake-legend">
+                                            <option value="">系統1</option>
+                                            <option value="">系統2</option>
+                                            <option value="">系統3</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <section class="userID">
+                                    <div class="flex-form">
+                                        <div class="form_grp">
+                                            <label class="form_title">帳號</label>
+                                            <div class="form_content">
+                                                <input type="text" id="" placeholder="請輸入帳號">
+                                            </div>
+                                        </div>
+                                        <div class="form_grp">
+                                            <label for="password" class="form_title">密碼</label>
+                                            <div class="form_content">
+                                                <input name="password" id="password" type="password"
+                                                    placeholder="請輸入密碼">
+                                                <a href="#" class="forgetPW"><span>?</span>忘記密碼</a>
+                                            </div>
+                                        </div>
+                                        <div class="form_grp">
+                                            <div class="form_title">驗證碼</div>
+                                            <div class="form_content form_inline">
+                                                <input name="" type="text" value="" placeholder="請輸入驗證碼">
+                                                <img src="images/basic/captcha.gif" alt="" class="captcha">
+                                                <button class="btn">更換驗證碼</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn_grp form_inline">
+                                        <button class="btn btn-reset">全部清除</button>
+                                        <button class="btn btn-submit">確認送出</button>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <!-- 系統公告 -->
+                        <div class="col">
+                            <h2 class="title">系統公告</h2>
+                            <div class="newslist">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            <time>2018-03-09</time><span>颱風逼近軍民齊心加強防颱戒備颱風逼近軍民齊心加強防颱戒備</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <time>2018-03-09</time><span>東坑微電網示範將到期縣府盼由台電承接</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <time>2018-03-09</time><span>公務員高普考10日登場縣府謹慎試務</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <time>2018-03-09</time><span>縣長﹕導引正向能量提升教育競爭力</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="btn_grp">
+                                <button class="btn btn-more">更多公告</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <!-- footer Start-->
+        <footer>
+            <div class="container">
+                <div class="footer_info">
+                    <p>維護單位：凌網科技股份有限公司</p>
+                    <p>客服人員：鄭筱筠小姐&nbsp;&nbsp;|&nbsp;&nbsp;客服電話：03-5601285&nbsp;&nbsp;|&nbsp;&nbsp;傳真：03-5601297&nbsp;&nbsp;|&nbsp;&nbsp;客服信箱：baphiq@hyweb.com.tw
+                    </p>
+                    <p class="Copyright">Copyright© 2007 All rights are reserved. 版權所有，轉載必究</p>
+                    <p>台北市中正區和平西路二段100號9樓&nbsp;&nbsp;|&nbsp;&nbsp;9F., No. 100, Sec. 2, Heping W. Rd., Zhongzheng Dist.,
+                        Taipei City
+                        100,
+                        Taiwan (R.O.C.)</p>
+                </div>
+            </div>
+        </footer>
+        <!-- footer End -->
+    </div>
+    <a href="javascript:;" class="scrollToTop">回頁首</a>
+    <!-- JQ -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <!-- 外掛 plugin js -->
+    <script src="vendor/jquery.easing.min.js"></script>
+    <!-- ease -->
+    <script src="vendor/slick/slick.min.js "></script>
+    <!-- slick -->
+    <script src="vendor/slick/slick-lightbox.js "></script>
+    <!-- slick lightbox -->
+    <script src="vendor/lazyload/lazyload.js"></script>
+    <!-- lazyload -->
+    <script src="vendor/picturefill/picturefill.min.js" async></script>
+    <!-- picturefill -->
+    <script src="vendor/scrolltable/jquery.scroltable.min.js"></script>
+    <!-- scrolltable -->
+    <!-- sticky-sidebar -->
+    <script src='vendor/sticky-sidebar/sticky-sidebar.js'></script>
+    <script src='vendor/sticky-sidebar/ResizeSensor.js'></script>
+    <!-- fancy -->
+    <script src='vendor/fancybox/jquery.fancybox.min.js'></script>
+    <!-- hyUI -->
+    <script src="js/hyui.js"></script>
+    <!-- 客製js -->
+    <script src="js/customize.js"></script>
+</body>
+
+</html>
