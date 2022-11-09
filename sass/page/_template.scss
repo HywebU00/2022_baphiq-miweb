@@ -184,6 +184,20 @@ body {
             border-radius: 50%;
         }
     }
+
+    .specialBox {
+        background: #fff;
+        box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px;
+        border-radius: 12px;
+        padding: 2em 3em;
+        margin-bottom: 2em;
+
+        .flex-form .form_grp {
+            &:nth-child(2) {
+                border-bottom: none;
+            }
+        }
+    }
 }
 
 // 整體共用container樣式，請注意首頁切版頁面的整齊
@@ -353,7 +367,7 @@ body {
 // 為了與首頁區隔，請在內頁加上innerpage ClassName
 .innerpage {
     >.container {
-        @include gutter(); //gutter 代表左右要留白
+        // @include gutter(); //gutter 代表左右要留白
         display: flex;
     }
 
@@ -361,6 +375,8 @@ body {
         flex: none;
         flex-basis: 100%;
         max-width: 100%;
+        background: #f8f8f8;
+        padding: 1em 3em;
     }
 
     .left_block {
