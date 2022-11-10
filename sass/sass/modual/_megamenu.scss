@@ -4,18 +4,22 @@
     z-index: 99;
     // 預設選單 ul
     clear: both;
+
     @include screen('mobile') {
         display: none;
     }
+
     >ul {
         margin: 0;
         padding: 0;
         list-style-type: none;
         display: flex;
         flex-wrap: wrap;
+
         // 第一層選單樣式
         >li {
             flex: 0 1 calc(100% / 6);
+
             >a {
                 display: block;
                 padding: 0 1em;
@@ -24,6 +28,7 @@
                 line-height: 2.5em;
                 color: $color-word;
             }
+
             &.hasChild {
                 >a {
                     &:after {
@@ -41,9 +46,11 @@
                     }
                 }
             }
+
             &:hover {
                 >a {
                     color: $aHover;
+
                     &:after {
                         border: 2px solid $aHover;
                         border-bottom: none;
@@ -53,6 +60,7 @@
             }
         }
     }
+
     ul {
         li {
             a {
@@ -60,6 +68,7 @@
                 outline: none;
                 text-decoration: none;
             }
+
             // 第二層選單樣式
             ul {
                 // display: none;
@@ -78,48 +87,60 @@
                 text-align: left;
                 align-items: flex-start;
                 flex-wrap: wrap;
+
                 li {
                     flex: none;
                     flex-basis: 23%;
                     margin: 0 1%;
                     padding: 0;
+
                     a {
                         padding: .6em 1.2em;
                         color: #FFF;
                         font-weight: bold;
                         box-sizing: border-box;
-                        &:hover, &:focus {
+
+                        &:hover,
+                        &:focus {
                             background: $aHover;
                         }
                     }
+
                     // 第三層選單樣式
                     ul {
                         margin: 0 0 20px;
-                        padding: 0!important;
-                         background: #fff;
+                        padding: 0 !important;
+                        background: #fff;
+
                         li {
                             margin: 0;
                             padding: 0;
-                            a{
+
+                            a {
                                 padding: .8em 1.2em;
-                                color:#000;
-                                &:hover, &:focus{
-                                    color:#fff;
+                                color: #000;
+
+                                &:hover,
+                                &:focus {
+                                    color: #fff;
                                 }
                             }
+
                             ul {
                                 margin: 0;
-                                padding: 0!important;
-                                li{
-                                    a{
+                                padding: 0 !important;
+
+                                li {
+                                    a {
                                         padding: .8em 1.2em .8em 2.2em;
                                     }
-                                    
+
                                 }
                             }
                         }
                     }
                 }
+
                 li.hasChild {
                     >ul {
                         position: relative;
@@ -128,10 +149,13 @@
                         left: 0;
                         animation: none;
                         display: block;
+
                         li {
                             display: block;
                             width: 100%;
+
                             >a {
+
                                 &:hover,
                                 &:focus {
                                     background: $primaryColor;
@@ -140,6 +164,7 @@
                         }
                     }
                 }
+
                 ul {
                     top: 0;
                     left: 100%;
@@ -150,6 +175,7 @@
         }
     }
 }
+
 // 行動版選單sidebar
 .sidebar {
     position: fixed;
@@ -164,9 +190,11 @@
     -webkit-overflow-scrolling: touch;
     -webkit-transform: translate3d(0, 0, 0);
     box-sizing: border-box;
+
     .megamenu {
         display: block;
     }
+
     >.menu_overlay {
         background: RGBA(0, 0, 0, .5);
         position: fixed;
@@ -182,6 +210,7 @@
         overflow-x: hidden !important;
         overflow-y: auto !important;
     }
+
     .m_area {
         &:before {
             content: "";
@@ -197,6 +226,7 @@
             line-height: 3em;
             box-sizing: border-box;
         }
+
         width:280px;
         padding: 3em 0;
         position:absolute;
@@ -210,11 +240,13 @@
         -webkit-overflow-scrolling: touch;
         -webkit-transform: translate3d(0, 0, 0);
         box-sizing: border-box;
+
         .megamenu {
             width: 100%;
             @include box-shadow(0px 0px 4px RGBA(0, 0, 0, .4));
             margin-bottom: 1em;
             background: #CCC;
+
             a {
                 display: block;
                 color: #222;
@@ -222,11 +254,14 @@
                 transition: .4s ease-out;
                 text-align: left;
             }
+
             ul {
                 display: flex;
+
                 li {
                     flex: 1 1 100%;
                     flex-direction: column;
+
                     >a {
                         padding: .5em 1em;
                         min-height: 2em;
@@ -234,6 +269,7 @@
                         background: #FFF;
                         border-bottom: 1px solid #CCC;
                     }
+
                     &.hasChild {
                         >a {
                             padding: .5em 1em;
@@ -241,6 +277,7 @@
                             background: #FFF;
                             padding-right: 36px;
                             position: relative;
+
                             &:after {
                                 content: '';
                                 position: absolute;
@@ -257,6 +294,7 @@
                             }
                         }
                     }
+
                     ul {
                         display: none;
                         position: relative;
@@ -264,6 +302,7 @@
                         padding: 0;
                         background-color: transparent;
                         font-size: 0.938em;
+
                         li {
                             a {
                                 display: block;
@@ -271,26 +310,31 @@
                                 line-height: 1.5em;
                                 padding: .5em 1em .5em 2em !important;
                                 background: #eee;
+
                                 &:hover,
                                 &:focus {
                                     color: #000;
                                     background: #ccc;
                                 }
                             }
+
                             &.hasChild {
                                 >a {
                                     background: #eee;
                                 }
                             }
+
                             li {
                                 a {
                                     background: rgba(0, 0, 0, .15) !important;
                                     padding: .5em 1em .5em 4em !important;
                                     border-bottom: 1px solid #BBB;
+
                                     &:hover,
                                     &:focus {
                                         background: rgba(0, 0, 0, .25) !important;
                                     }
+
                                     &:after {
                                         display: none !important;
                                     }
@@ -301,10 +345,27 @@
                 }
             }
         }
+
+        .menu {
+            background: none;
+        }
+
+        .member {
+            color: #fff;
+            padding: 0 1em;
+            line-height: 2;
+
+            .btn-logout {
+                background: #f5cb4b;
+                color: #222;
+            }
+        }
     }
+
     .navigation {
         position: relative;
         text-align: left;
+
         ul {
             float: none;
             width: 90%;
@@ -315,15 +376,18 @@
             border: 1px solid rgba(255, 255, 255, .5);
             border-bottom: none;
             border-right: none;
+
             li {
                 float: left;
                 width: 50%;
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
+
                 &:nth-child(odd):last-child {
                     width: 100%;
                 }
+
                 a {
                     display: block;
                     height: 3em;
@@ -335,10 +399,12 @@
                     text-decoration: none;
                     border: 1px solid rgba(255, 255, 255, .5);
                     box-sizing: border-box;
+
                     &:nth-child(odd) {
                         border-left: none;
                         border-top: none;
                     }
+
                     &:hover,
                     &:focus {
                         background: darken($primaryColor, 20);
@@ -346,20 +412,25 @@
                 }
             }
         }
+
         .language {
             position: relative;
             width: 100%;
             @include gutter;
+
             a {
                 padding: .6em 1em;
                 background: rgba(0, 0, 0, .4);
+
                 &:after {
                     top: 1.3em;
                 }
+
                 &:before {
                     top: .8em;
                 }
             }
+
             ul {
                 width: 100%;
                 margin: 0;
@@ -368,8 +439,10 @@
                 padding: 0;
                 border: none;
                 background: none;
+
                 li {
                     width: 100% !important;
+
                     a {
                         border: none;
                         background: rgba(0, 0, 0, .4);
@@ -378,6 +451,7 @@
             }
         }
     }
+
     button.sidebarClose {
         position: absolute;
         display: block;
@@ -392,6 +466,7 @@
         border: none;
         background: none;
         border: none;
+
         &:before {
             position: absolute;
             width: 15px;
@@ -406,11 +481,13 @@
         }
     }
 }
+
 //animation
 @keyframes showMenu {
     0% {
         left: 20px;
     }
+
     100% {
         left: 0px;
     }

@@ -139,6 +139,10 @@ body {
         }
 
         @include screen('mobile') {
+            .sidebarCtrl {
+                display: none !important;
+            }
+
             .flex-equal-2 {
                 .Flex-set {
                     flex-flow: row wrap !important;
